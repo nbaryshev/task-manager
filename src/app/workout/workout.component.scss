@@ -1,0 +1,66 @@
+.workout-wrapper {
+  border: 2px #ddd solid;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  & .workout {
+    & fa-icon {
+      cursor: pointer;
+    }
+    margin: 0 10px 10px;
+    & .workout-name-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      border-bottom: 1px solid #ccc;
+      & .workout-name {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        & mat-checkbox {
+          margin-right: 5px;
+        }
+      }
+    }
+    & .exercises-wrapper {
+      display: block;
+      margin: 10px 10px 0 10px;
+      & .exercise {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        & .exercise-name {
+          display: flex;
+          align-items: center;
+          & mat-checkbox {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    & form {
+      margin: 20px 0 0 10px;
+      display: block;
+      & .input-field {
+        margin-top: 5px;
+        & input {
+          width: 40%;
+          height: 20px;
+          margin-right: 10px;
+        }
+        & button {
+          background-color: #474e7d;
+          color: #ffffff;
+          height: 26px;
+          width: 60px;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          & .disabled {
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}

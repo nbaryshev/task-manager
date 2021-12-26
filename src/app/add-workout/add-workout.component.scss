@@ -1,0 +1,67 @@
+.add-workout-form {
+  display: block;
+  border-top: 1px #ddd solid;
+  margin: 30px auto 10px;
+  width: 60%;
+  @media screen and (max-width: 768px) {
+    width: 95%
+  }
+  & .add-workout-header {
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+  }
+  & form {
+    & .label {
+      width: 120px;
+    }
+    & input {
+      height: 20px;
+    }
+    & span {
+      color: #FF0000;
+    }
+    & .new-workout, .new-exercise {
+      margin-bottom: 10px;
+      display: flex;
+    }
+    & .new-exercise {
+      display: flex;
+      flex-wrap: wrap;
+      & .input-wrapper {
+        display: flex;
+      }
+      @media screen and (max-width: 768px) {
+        display: block;
+        & .input-wrapper {
+          display: flex;
+          margin-bottom: 10px;
+        }
+      }
+      & input {
+        margin-right: 10px;
+        height: 20px;
+      }
+      & button {
+        background-color: #474e7d;
+        color: #ffffff;
+        height: 26px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 15px;
+        line-height: 1.4px;
+        padding: 0 10px;
+      }
+    }
+    & .submit-btn {
+      background-color: #28a745;
+      color: #ffffff;
+      height: 26px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      line-height: 1.4px;
+      padding: 0 10px;
+    }
+  }
+}

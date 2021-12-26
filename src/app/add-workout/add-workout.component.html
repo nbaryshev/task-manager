@@ -1,0 +1,31 @@
+<div class="add-workout-form">
+  <div class="add-workout-header">Add new workout</div>
+  <form [formGroup]="workoutForm" (ngSubmit)="onSubmit()">
+    <div class="new-workout">
+      <div class="label">
+        <label for="workout-name">Workout name<span>*</span>:</label>
+      </div>
+      <input id="workout-name" type="text" formControlName="name">
+    </div>
+    <div formArrayName="exercises">
+      <div *ngFor="let exercise of exercises.controls; let i=index">
+        <div class="new-exercise" [formGroupName]="i">
+          <div class="input-wrapper">
+            <div class="label">
+              <label for="exercise-{{ i }}">Exercise<span>*</span>:</label>
+            </div>
+            <input id="exercise-{{ i }}" type="text" formControlName="name">
+          </div>
+          <button (click)="addExercise()" type="button">+ Add another exercise</button>
+        </div>
+      </div>
+    </div>
+    <button 
+      type="submit"
+      [disabled]="!workoutForm.valid"
+      class="submit-btn"
+    >
+      Submit
+    </button>
+  </form>
+</div>

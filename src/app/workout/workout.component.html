@@ -1,0 +1,51 @@
+<div class="workout-wrapper">
+  <div class="workout">
+    <div class="workout-name-header">
+      <div class="workout-name">
+        <mat-checkbox
+          [disabled]="hasNotCompletedExercises()"
+          [checked]="workout.completed"
+          (change)="updateWorkout($event.checked)"
+        >
+        </mat-checkbox>
+        <div>{{workout.name}}</div>
+      </div>
+      <fa-icon
+        [icon]="faTrashAlt"
+        (click)="deleteWorkout()"
+      ></fa-icon>
+    </div>
+    <div class="exercises-wrapper">
+      <div
+        *ngFor="let exercise of workout.exercises; let j=index"
+        class="exercise">
+        <div class="exercise-name">
+          <mat-checkbox
+            [checked]="exercise.completed"
+            (change)="updateExercise(exercise, j, $event.checked)"
+          >
+          </mat-checkbox>
+          <div data-hook="exercise-name">{{exercise.name}}</div>
+        </div>
+        <fa-icon
+          [icon]="faTrashAlt"
+          (click)="deleteExercise(exercise.name)"
+        ></fa-icon>
+      </div>
+    </div>
+        
+    <form [formGroup]="exerciseForm" (ngSubmit)="addNewExercise()">
+      <label for="new-exercise">Add new exercise:</label>
+      <div class="input-field">
+        <input id="new-exercise" type="text" formControlName="name">
+        <button
+          type="submit"
+          [disabled]="!exerciseForm.valid"
+          data-hook="add-exercise"
+        >
+          Add
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

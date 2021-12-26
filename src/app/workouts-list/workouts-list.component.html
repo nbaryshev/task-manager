@@ -1,0 +1,5 @@
+<div class="workouts-list-wrapper">
+  <div *ngFor="let workout of (workouts | async)?.workouts; let workoutIndex = index">
+    <app-workout [workout]="workout" [workoutIndex]="workoutIndex"></app-workout>
+  </div>
+</div>
